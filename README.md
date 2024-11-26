@@ -13,7 +13,7 @@ just make sure you have all the env vars set when you run it. using pm2 works re
 
 ## Support
 
-use issues here or use the discord
+use issues here or use the discord https://discord.gg/UJDTkPS6Pe
 
 ## Support *Me*
 
