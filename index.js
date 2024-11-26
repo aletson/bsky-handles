@@ -98,7 +98,7 @@ client.on('interactionCreate', async (interaction) => {
                     body: JSON.stringify(pb_body),
                     headers: { 'Content-Type': 'application/json' }
                 });
-                let exists = response.json();
+                let exists = await response.json();
                 console.log(exists);
                 if (exists.records.length > 0) { // if subdomain exists, edit, because handle isn't valid right now in Bluesky. potential issue here where someone request a handle, doesn't verify, then someone else requests the same handle
                     let pb_body = {
