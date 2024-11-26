@@ -84,7 +84,7 @@ client.on('interactionCreate', async (interaction) => {
                             headers: { 'Content-Type': 'application/json' }
                         });
                         const data = await response.json();
-                        interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
+                        interaction.reply({ content: 'Your handle should be set up at ' + handle + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
                         locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     }
                 } else {
@@ -123,7 +123,7 @@ client.on('interactionCreate', async (interaction) => {
                             headers: { 'Content-Type': 'application/json' }
                         });
                         const data = await response.json();
-                        await interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
+                        await interaction.reply({ content: 'Your handle should be set up at ' + handle + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
                         locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     } else {
                         let pb_body = {
@@ -140,7 +140,7 @@ client.on('interactionCreate', async (interaction) => {
                             headers: { 'Content-Type': 'application/json' }
                         });
                         const data = await response.json();
-                        interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
+                        interaction.reply({ content: 'Your handle should be set up at ' + handle + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
                         locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     }
                 } else {
