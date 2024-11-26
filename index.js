@@ -115,7 +115,7 @@ client.on('interactionCreate', async (interaction) => {
                         headers: { 'Content-Type': 'application/json' }
                     });
                     const data = await response.json();
-                    await interaction.reply('New handle is set up.');
+                    await interaction.reply({content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes.', ephemeral: true});
                 } else {
                     let pb_body = {
                         apikey: process.env.pb_apikey,
