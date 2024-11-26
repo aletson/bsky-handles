@@ -38,7 +38,7 @@ client.on('interactionCreate', async (interaction) => {
     if (interaction.isCommand()) {
         let did = interaction.options.getString('did');
         let handle = interaction.options.getString('handle').toLowerCase();
-        let lockExists = locks.find(l => handle === l.handle && l.lock > new Date.now());
+        let lockExists = locks.find(l => handle === l.handle && l.lock > Date.now());
         try {
             let thisHandleExists = await agent.getProfile({ actor: `${handle}.${domain}` }); // check if handle exists in Bluesky
             if (!thisHandleExists) { //handle does not exist in bluesky
@@ -85,7 +85,7 @@ client.on('interactionCreate', async (interaction) => {
                         });
                         const data = await response.json();
                         interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
-                        locks.push({ handle: handle, lock: new Date.now() + 1800000 });
+                        locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     }
                 } else {
                     interaction.reply({ content: 'This handle is currently locked for registration. If the user who has locked it does not register it on Bluesky within 30 minutes of their claiming the handle via this bot, it will be released again for registration.', ephemeral: true });
@@ -124,7 +124,7 @@ client.on('interactionCreate', async (interaction) => {
                         });
                         const data = await response.json();
                         await interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
-                        locks.push({ handle: handle, lock: new Date.now() + 1800000 });
+                        locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     } else {
                         let pb_body = {
                             apikey: process.env.pb_apikey,
@@ -141,7 +141,7 @@ client.on('interactionCreate', async (interaction) => {
                         });
                         const data = await response.json();
                         interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes. Please make sure you set up the handle within 30 minutes or it will be released for free registration.', ephemeral: true });
-                        locks.push({ handle: handle, lock: new Date.now() + 1800000 });
+                        locks.push({ handle: handle, lock: Date.now() + 1800000 });
                     }
                 } else {
                     interaction.reply({ content: 'This handle is currently locked for registration. If the user who has locked it does not register it on Bluesky within 30 minutes of their claiming the handle via this bot, it will be released again for registration.', ephemeral: true });
