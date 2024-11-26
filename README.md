@@ -3,7 +3,7 @@
 a discord bot to register bluesky handles for a domain
 
 ## Dependencies
-- a porkbun domain with api management enabled
+- a domain using [Porkbun](https://porkbun.com) with API management enabled
   - if you need another dns provider, ripping out the porkbun code and replacing with your dns provider of choice should be trivial
 - see package.json for the rest
 
