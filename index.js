@@ -11,7 +11,7 @@ let agent = new BskyAgent({
 
 connection.connect();
 client.login(process.env.app_token);
-await agent.login({
+agent.login({
   identifier: process.env.bsky_user,
   password: process.env.bsky_pw
 })
