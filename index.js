@@ -59,7 +59,7 @@ client.on('interactionCreate', async (interaction) => {
                         content: did,
                         ttl: 600
                     };
-                    const response = await fetch(`https://porkbun.com/api/json/v3/dns/edit/${domain}/${thisHandle[0][0].porkbun_id}`, {
+                    const response = await fetch(`https://porkbun.com/api/json/v3/dns/edit/${domain}/${exists.records[0].id}`, {
                         method: 'post',
                         body: JSON.stringify(pb_body),
                         headers: { 'Content-Type': 'application/json' }
@@ -81,7 +81,7 @@ client.on('interactionCreate', async (interaction) => {
                         headers: { 'Content-Type': 'application/json' }
                     });
                     const data = await response.json();
-                    interaction.reply({ content: 'Your handle should be set up at https://' + domain + ' in approximately five minutes.', ephemeral: true });
+                    interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes.', ephemeral: true });
                 }
             } else { // handle exists in Bluesky
                 await interaction.reply({ content: 'Someone has already taken this custom subdomain, sorry', ephemeral: true });
@@ -109,7 +109,7 @@ client.on('interactionCreate', async (interaction) => {
                         content: did,
                         ttl: 600
                     };
-                    const response = await fetch(`https://porkbun.com/api/json/v3/dns/edit/${domain}/${thisHandle[0][0].porkbun_id}`, {
+                    const response = await fetch(`https://porkbun.com/api/json/v3/dns/edit/${domain}/${exists.records[0].id}`, {
                         method: 'post',
                         body: JSON.stringify(pb_body),
                         headers: { 'Content-Type': 'application/json' }
@@ -131,7 +131,7 @@ client.on('interactionCreate', async (interaction) => {
                         headers: { 'Content-Type': 'application/json' }
                     });
                     const data = await response.json();
-                    interaction.reply({ content: 'Your handle should be set up at https://' + domain + ' in approximately five minutes.', ephemeral: true });
+                    interaction.reply({ content: 'Your handle should be set up at ' + did + '.' + domain + ' in approximately five minutes.', ephemeral: true });
                 }
             }
         }
