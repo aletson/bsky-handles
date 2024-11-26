@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const { SlashCommandBuilder, GatewayIntentBits, Partials, PermissionFlagsBits } = require('discord.js');
-const client = new Discord.Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers], partials: [Partials.GuildMember], });
+const client = new Discord.Client({ intents: [GatewayIntentBits.Guilds], partials: [Partials.GuildMember], });
 let fetch = require('node-fetch');
 let { BskyAgent } = require('@atproto/api')
 let domain = process.env.domain;
