@@ -51,7 +51,7 @@ client.on('interactionCreate', async (interaction) => {
       });
       let exists = response.json();
       if (exists.records.length > 0) { // if subdomain exists, edit, because handle isn't valid right now in Bluesky. potential issue here where someone request a handle, doesn't verify, then someone else requests the same handle
-        var pb_body = {
+        let pb_body = {
           apikey: process.env.pb_apikey,
           secretapikey: process.env.pb_secretkey,
           name: `_atproto.${handle}`,
@@ -67,7 +67,7 @@ client.on('interactionCreate', async (interaction) => {
         const data = await response.json();
         await interaction.reply('New handle is set up.');
       } else {
-        var pb_body = {
+        let pb_body = {
           apikey: process.env.pb_apikey,
           secretapikey: process.env.pb_secretkey,
           name: `_atproto.${handle}`,
