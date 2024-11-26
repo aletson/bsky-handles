@@ -9,7 +9,6 @@ let agent = new BskyAgent({
   service: 'https://bsky.social'
 })
 
-connection.connect();
 client.login(process.env.app_token);
 agent.login({
   identifier: process.env.bsky_user,
