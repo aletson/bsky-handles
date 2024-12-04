@@ -52,7 +52,7 @@ client.on('interactionCreate', async (interaction) => {
                         headers: { 'Content-Type': 'application/json' }
                     });
                     let exists = response.json();
-                    if (exists.records.length > 0) { // if subdomain exists, edit, because handle isn't valid right now in Bluesky. potential issue here where someone request a handle, doesn't verify, then someone else requests the same handle
+                    if (typeof exists.records !== 'undefined' && exists.records.length > 0) { // if subdomain exists, edit, because handle isn't valid right now in Bluesky. potential issue here where someone request a handle, doesn't verify, then someone else requests the same handle
                         let pb_body = {
                             apikey: process.env.pb_apikey,
                             secretapikey: process.env.pb_secretkey,
