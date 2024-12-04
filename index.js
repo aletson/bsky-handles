@@ -149,5 +149,3 @@ client.on('interactionCreate', async (interaction) => {
         }
     }
 });
-
-1800000
