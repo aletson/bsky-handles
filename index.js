@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { SlashCommandBuilder, GatewayIntentBits, Partials, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, GatewayIntentBits, Partials } = require('discord.js');
 const client = new Discord.Client({ intents: [GatewayIntentBits.Guilds], partials: [Partials.GuildMember], });
 let fetch = require('node-fetch');
 let { BskyAgent } = require('@atproto/api')
@@ -27,8 +27,7 @@ client.on('ready', async () => {
         .addStringOption(option =>
             option.setName('handle')
                 .setDescription(`Custom handle, e.g. "sample" if you want @sample.${domain}`)
-                .setRequired(true))
-        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator);
+                .setRequired(true));
 
 
     await client.application.commands.set([customhandle.toJSON()]);
